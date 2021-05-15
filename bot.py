@@ -1,19 +1,19 @@
 from pyrogram import Client, filters
 from pyrogram.types import Message, Poll, InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
+import os
 
 
-api_id = api id
-api_hash = 'api hash'
-token = "token"
-
+api_id = int(environ.get("API_ID"))
+api_hash = environ.get("API_HASH")
+token = environ.get("TOKEN")
 
 app = Client(':memory:', api_id, api_hash, bot_token=token)
 
 non_anonymous_poll = filters.create(lambda *_: _[2].poll is not None and not _[2].poll.is_anonymous)
 
-forwardchannel = -1000000000000
+forwardchannel = -1001200739050
 startmsg  = """
-text
+STARTED 
 """
 
 
